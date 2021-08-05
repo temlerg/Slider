@@ -153,7 +153,7 @@ class CardTile extends StatelessWidget {
     );
 
     return Align(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.centerLeft,
       child: SizedBox(
         width: maxWidth ?? kDefaultMaxWidth,
         child: Padding(

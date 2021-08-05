@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:Slider/thumb.dart';
 import 'package:flutter/material.dart';
 
@@ -14,22 +12,31 @@ class SliderWidget extends StatefulWidget {
   final textController = TextEditingController();
   final double min;
   final double max;
+
   // start volume
   double? volume;
+
   // color to point
   final Color? activeColor;
+
   //color after point
   final Color? inactiveColor;
+
   //height slider
   final double trackHeight;
+
   //do we need to use text above the point
   final bool flag;
+
   //text above point
   final String? text;
+
   //text min volume
   final String minText;
+
   //text max volume
   final String maxText;
+
   //point border color
   final Color? thumbColor;
 
@@ -60,7 +67,7 @@ class _SliderWidget extends State<SliderWidget> {
     }
     if (widget.textController.value.text.isEmpty ||
         (double.parse(widget.textController.value.text) <= widget.max &&
-         double.parse(widget.textController.value.text) >= widget.min) ||
+            double.parse(widget.textController.value.text) >= widget.min) ||
         (widget.volume! < widget.max && widget.volume! > widget.min))
       widget.textController.value = widget.textController.value
           .copyWith(text: widget.volume!.round().toString());
@@ -120,11 +127,13 @@ class _SliderWidget extends State<SliderWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                         ))
                   ]))),
-          Container(
-              width: 350,
-              height: 80,
-              child: CardTile.card(
-                  padding: const EdgeInsets.only(left: 110),
+          Card(
+            margin: EdgeInsets.only(left: 16),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(16))),
+              child: ConstrainedBox(
+                  constraints:
+                      const BoxConstraints(maxWidth: 250, maxHeight: 80),
                   child: Row(children: [
                     Padding(padding: const EdgeInsets.only(left: 16)),
                     Expanded(
