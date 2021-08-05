@@ -10,17 +10,27 @@ const Color kDefaultInactiveColor = Color(0xffBF86C0);
 const Color kDefaultThumbColor = Colors.white;
 
 class SliderWidget extends StatefulWidget {
+  // text input
   final textController = TextEditingController();
   final double min;
   final double max;
+  // start volume
   double? volume;
+  // color to point
   final Color? activeColor;
+  //color after point
   final Color? inactiveColor;
+  //height slider
   final double trackHeight;
+  //do we need to use text above the point
   final bool flag;
+  //text above point
   final String? text;
+  //text min volume
   final String minText;
+  //text max volume
   final String maxText;
+  //point border color
   final Color? thumbColor;
 
   SliderWidget(
