@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         backgroundColor: Colors.black,
         body: SliderWidget(
+          textController: _textController,
           flag: true,
           trackHeight: 15,
           min: 500,

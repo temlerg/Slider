@@ -9,7 +9,7 @@ const Color kDefaultThumbColor = Colors.white;
 
 class SliderWidget extends StatefulWidget {
   // text input
-  final textController = TextEditingController();
+  final TextEditingController textController;
   final double min;
   final double max;
 
@@ -42,6 +42,7 @@ class SliderWidget extends StatefulWidget {
 
   SliderWidget(
       {Key? key,
+      required this.textController,
       this.inactiveColor,
       this.activeColor,
       this.thumbColor,
@@ -128,7 +129,7 @@ class _SliderWidget extends State<SliderWidget> {
                         ))
                   ]))),
           Card(
-            margin: EdgeInsets.only(left: 16),
+              margin: EdgeInsets.only(left: 16),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(16))),
               child: ConstrainedBox(
